@@ -1,0 +1,13 @@
+{
+    "mail": {
+        "subject": "from localhost",
+            "smtp": {
+                "host": "smtp.ethereal.email",
+                "port": 587,
+        "auth": {
+            "user": "mohamed.hauck71@ethereal.email",
+            "pass": "uvMqVXsGEvfGBsXqhj"
+            }
+        }
+    }
+}
