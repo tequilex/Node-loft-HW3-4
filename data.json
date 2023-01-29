@@ -64,19 +64,64 @@
       "price": 600
     },
     {
-      "src": "assets\\img\\products\\a212a74229ee57d7146c50200.jpeg",
-      "name": "ufuf",
-      "price": 7777
+      "src": "upload\\05072a9e2492ac0a01ccbc000.jpeg",
+      "name": "rwertwet",
+      "price": 535
     },
     {
-      "src": "assets\\img\\products\\bb75eb1f2a1182504c93ab700.jpg",
-      "name": "fllff",
-      "price": 868
+      "src": "upload\\2deb07e5096fdb6cc494ac300.jpg",
+      "name": "gdfgdfgsfg",
+      "price": 6346
     },
     {
-      "src": "assets\\img\\products\\1ee8ef27725739ca2d5f5d200.jpg",
-      "name": "efef",
-      "price": 434
+      "src": "upload\\848f59c4d80af34f4804d8200.jpg",
+      "name": "fafaf",
+      "price": 34
+    },
+    {
+      "src": "upload\\de33520a3ffa0d8dd761cf800.jpg",
+      "name": "q q",
+      "price": null
+    },
+    {
+      "src": "upload\\dbffc22370fe0b95e636fd800.jpg",
+      "name": "989b",
+      "price": null
+    },
+    {
+      "src": "upload\\ff02498b063a347e118891000.jpeg",
+      "name": "tewtw",
+      "price": 35235
+    },
+    {
+      "src": "upload\\8ce848322b1758f91f8c0e000.jpg",
+      "name": "hjvbh",
+      "price": 897
+    },
+    {
+      "src": "../upload\\a2a9d197a601cfda2701a9700.jpeg",
+      "name": "jklhiolj",
+      "price": 8989779
+    },
+    {
+      "src": "upload\\8d07382bbb09df8def42c3300.jpg",
+      "name": "шщро",
+      "price": 900
+    },
+    {
+      "src": "upload\\dffdc18838f50d64c506df900.jpg",
+      "name": "оли",
+      "price": 98
+    },
+    {
+      "src": "upload\\030eca5a86eef0d87b3c95600.jpeg",
+      "name": "",
+      "price": 0
+    },
+    {
+      "src": "./upload\\291a7dbd4e513bcefc0f24e00.jpg",
+      "name": "hdf",
+      "price": 45
     }
   ]
 }

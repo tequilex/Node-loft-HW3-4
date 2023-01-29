@@ -17,6 +17,7 @@ router.get('/', (req, res, next) => {
     msgfile: req.flash('msgfile')[0],
     skills: db.get('skills').value(),
   })
+  
 })
 
 router.post('/skills', (req, res, next) => {
@@ -57,21 +58,22 @@ router.post('/upload', (req, res, next) => {
   */
 
   const form = new formidable.IncomingForm()
-  const upload = path.join('./public', './assets/img/products')
-  const uploadDir = path.join(process.cwd(), upload)
+  // const upload = path.join('./public', './assets/img/products')
+  const uploadDir = path.join(process.cwd(), './upload')
 
   form.parse(req, (err, fields, files) => {
     if (err) {
+      req.flash('msgfile', 'При загрузке произошла ошибка!')
       res.redirect('/admin')
     }
 
     const { name, price } = fields
     const originalExt = path.extname(files.photo.originalFilename)
-    const fileName = path.join(
-      uploadDir,
-      `${files.photo.newFilename}${originalExt}`
-    )
-    const dirPhoto = path.join('./assets/img/products', files.photo.newFilename)
+    const fileName = path.join(uploadDir, `${files.photo.newFilename}${originalExt}`)
+    const dirPhoto = path.join('./upload', files.photo.newFilename)
+    console.log(uploadDir);
+    console.log(dirPhoto);
+    console.log(fileName);
 
     fs.renameSync(files.photo.filepath, fileName)
     db.defaults({ products: [] })
