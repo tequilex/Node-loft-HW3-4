@@ -9,8 +9,7 @@ router.get('/', (req, res, next) => {
   if (!req.session.isAdmin) {
     res.redirect('/login')
   }
-  // TODO: Реализовать, подстановку в поля ввода формы 'Счетчики'
-  // актуальных значений из сохраненых (по желанию)
+
   res.render('pages/admin', {
     title: 'Admin page',
     msgskill: req.flash('msgskill')[0],
@@ -21,14 +20,6 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/skills', (req, res, next) => {
-  /*
-  TODO: Реализовать сохранение нового объекта со значениями блока скиллов
-
-    в переменной age - Возраст начала занятий на скрипке
-    в переменной concerts - Концертов отыграл
-    в переменной cities - Максимальное число городов в туре
-    в переменной years - Лет на сцене в качестве скрипача
-  */
   const { age, concerts, cities, years } = req.body
   db.set('skills[0]', {
     number: age,
@@ -49,17 +40,13 @@ router.post('/skills', (req, res, next) => {
 })
 
 router.post('/upload', (req, res, next) => {
-  /* TODO:
-  Реализовать сохранения объекта товара на стороне сервера с картинкой товара и описанием
-    в переменной photo - Картинка товара
-    в переменной name - Название товара
-    в переменной price - Цена товара
-    На текущий момент эта информация хранится в файле data.json  в массиве products
-  */
-
   const form = new formidable.IncomingForm()
   // const upload = path.join('./public', './assets/img/products')
   const uploadDir = path.join(process.cwd(), './upload')
+
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir)
+  }
 
   form.parse(req, (err, fields, files) => {
     if (err) {
@@ -70,10 +57,7 @@ router.post('/upload', (req, res, next) => {
     const { name, price } = fields
     const originalExt = path.extname(files.photo.originalFilename)
     const fileName = path.join(uploadDir, `${files.photo.newFilename}${originalExt}`)
-    const dirPhoto = path.join('./upload', files.photo.newFilename)
-    console.log(uploadDir);
-    console.log(dirPhoto);
-    console.log(fileName);
+    const dirPhoto = files.photo.newFilename
 
     fs.renameSync(files.photo.filepath, fileName)
     db.defaults({ products: [] })
